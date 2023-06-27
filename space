@@ -1,0 +1,43 @@
+val bitmap = BitmapFactory.decodeResource(resources, R.drawable.my_image)
+val scaledBitmap = Bitmap.createScaledBitmap(bitmap, newWidth, newHeight, true)
+val matrix = Matrix()
+matrix.postRotate(90f)
+val rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+
+@Composable
+fun BirthdayGreetingWithImage(message: String, from: String) {
+}
+@Composable
+fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier = Modifier) {
+}
+MyProject/
+    src/
+        MyActivity.kt
+    res/
+        drawable/
+            graphic.png
+        mipmap/
+            icon.png
+        values/
+            strings.xml
+val image = painterResource(R.drawable.androidparty)
+
+
+
+Image(
+   painter = image
+)
+import androidx.compose.foundation.Image
+
+Image(
+   painter = image,
+   contentDescription = null
+)
+
+@Preview(showBackground = false)
+@Composable
+fun BirthdayCardPreview() {
+    HappyBirthdayTheme {
+        BirthdayGreetingWithImage("Joker!", "- from kkkkk")
+    }
+}
